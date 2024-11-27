@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Send, Github, Instagram } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -17,8 +18,15 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
+    Swal.fire({
+      title: 'Success!',
+      text: 'Your message has been sent.',
+      icon: 'success',
+      confirmButtonText: 'OK',
+    });
+    setFormData({ name: '', email: '', message: '' });
+
   };
 
   return (
@@ -84,7 +92,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Social Media Links */}
+            
               <div className="flex space-x-6">
                 <a
                   href="https://github.com/prabhapk444"

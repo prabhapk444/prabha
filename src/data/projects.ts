@@ -15,7 +15,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Ayurveda Products Platform',
-    description: 'E-commerce platform for authentic Ayurvedic products.',
+    description: 'E-commerce platform for  Ayurvedic products.',
     image: 'https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80',
     technologies: ['PHP', 'MySQL', 'Bootstrap'],
   },

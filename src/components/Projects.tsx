@@ -36,6 +36,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading='lazy'
                     className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300" />

@@ -29,6 +29,7 @@ export default function About() {
               <img
                 src={imageSrc}
                 alt="Prabhakaran S"
+                loading='lazy'
                 className="rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 rounded-lg bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
