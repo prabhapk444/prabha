@@ -24,17 +24,12 @@ export const skills: Skill[] = [
   },
   {
     name: 'MySQL',
-    category: 'Backend',
+    category: 'Database',
     icon: 'Database'
   },
   {
-    name: 'JavaScript',
-    category: 'Language',
-    icon: 'Languages'
-  },
-  {
     name: 'Java',
-    category: 'Language',
+    category: 'Programming Language',
     icon: 'Languages'
   }
 ];

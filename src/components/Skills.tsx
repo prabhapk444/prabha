@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code2, Database, Languages } from 'lucide-react';
+import { Code2, Database, Languages, Terminal } from 'lucide-react'; 
 import { skills } from '../data/skills';
 
 const iconMap = {
   Code2,
   Database,
-  Languages
+  Languages,
+  Terminal 
 };
 
 export default function Skills() {
@@ -16,7 +17,8 @@ export default function Skills() {
     threshold: 0.1
   });
 
-  const categories = ['Frontend', 'Backend', 'Language'];
+ 
+  const categories = ['Frontend', 'Backend', 'Programming Language', 'Database'];
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">

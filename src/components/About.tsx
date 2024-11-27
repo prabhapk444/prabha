@@ -1,6 +1,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import imageSrc from '/images/2024-11-13-15-40-35-024.jpeg';
+
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -25,7 +27,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative group">
               <img
-                src="images/2024-11-13-15-40-35-024.jpeg"
+                src={imageSrc}
                 alt="Prabhakaran S"
                 className="rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300"
               />

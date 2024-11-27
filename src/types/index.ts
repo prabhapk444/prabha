@@ -8,7 +8,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Backend' | 'Language';
+  category: 'Frontend' | 'Backend' | 'Programming Language' | 'Database';
   icon: string;
 }
 
