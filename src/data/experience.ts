@@ -17,7 +17,7 @@ export const experience: Experience[] = [
     role: 'Full Stack Developer',
     duration: '2022 - 2024',
     description: [
-      'Developed and maintained web applications using React and Node.js',
+      'Developed and maintained web applications using React and Node.js and PHP and MYSQL',
       'Implemented responsive designs and optimized performance',
       'Collaborated with cross-functional teams to deliver projects on time',
       'Created the Noble College website from concept to deployment'

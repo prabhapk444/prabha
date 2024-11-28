@@ -23,7 +23,17 @@ export const skills: Skill[] = [
     icon: 'Database'
   },
   {
+    name: 'Node.js',
+    category: 'Backend',
+    icon: 'Database'
+  },
+  {
     name: 'MySQL',
+    category: 'Database',
+    icon: 'Database'
+  },
+  {
+    name: 'SQL',
     category: 'Database',
     icon: 'Database'
   },

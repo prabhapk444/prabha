@@ -1,4 +1,6 @@
 export interface Project {
+  imageMedium: any;
+  imageSmall: any;
   title: string;
   description: string;
   image: string;

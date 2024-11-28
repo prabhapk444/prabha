@@ -7,7 +7,7 @@ import { experience } from '../data/experience';
 export default function Experience() {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   return (
@@ -23,15 +23,30 @@ export default function Experience() {
             Work Experience
           </h2>
 
-          <div className="max-w-3xl mx-auto space-y-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
+         
+            <div className="absolute hidden md:block left-1/2 -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
+
             {experience.map((exp, index) => (
               <motion.div
                 key={exp.company}
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-100 dark:border-gray-700"
-                initial={{ opacity: 0, x: -50 }}
+                className={`relative bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-100 dark:border-gray-700 ${
+                  index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                }`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
+              
+                <div
+                  className={`absolute w-4 h-4 bg-primary-500 rounded-full -top-2 md:top-8 ${
+                    index % 2 === 0
+                      ? "md:-right-2 left-1/2 md:translate-x-1/2"
+                      : "md:-left-2 right-1/2 md:translate-x-1/2"
+                  } border-2 border-white dark:border-gray-900`}
+                ></div>
+
+             
                 <div className="flex items-start space-x-4">
                   <div className="p-2 bg-primary-100 dark:bg-primary-900 rounded-lg">
                     <Briefcase className="w-6 h-6 text-primary-500" />
@@ -50,7 +65,9 @@ export default function Experience() {
                       {exp.description.map((item, i) => (
                         <li key={i} className="flex items-start space-x-2">
                           <span className="text-primary-500 mt-1.5">•</span>
-                          <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                          <span className="text-gray-600 dark:text-gray-300">
+                            {item}
+                          </span>
                         </li>
                       ))}
                     </ul>

@@ -1,29 +1,45 @@
-import { Project } from '../types';
+import { Project } from "../types";
 
 export const projects: Project[] = [
   {
     title: "Shelby's Music",
     description: "A modern music streaming platform with advanced playlist management.",
-    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80",
+    image: 'images/spotify.webp',
     technologies: ['Next.js', 'TypeScript', 'Supabase'],
+    imageMedium: undefined,
+    imageSmall: undefined
   },
   {
     title: 'Nursery Plant Management',
     description: 'Complete solution for managing nursery inventory and sales.',
-    image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80',
+    image: 'images/nursery.webp',
     technologies: ['PHP', 'MySQL', 'Bootstrap'],
+    imageMedium: undefined,
+    imageSmall: undefined
   },
   {
     title: 'Ayurveda Products Platform',
-    description: 'E-commerce platform for  Ayurvedic products.',
-    image: 'https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80',
+    description: 'E-commerce platform for Ayurvedic products.',
+    image: 'images/ayur.webp',
     technologies: ['PHP', 'MySQL', 'Bootstrap'],
+    imageMedium: undefined,
+    imageSmall: undefined
   },
   {
     title: 'Hari Chitra Crackers',
     description: 'Online fireworks store with inventory management.',
-    image: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&q=80',
+    image: 'images/crackers.webp',
     technologies: ['PHP', 'MySQL', 'jQuery'],
-    link: 'https://harichitracrackers.com'
-  }
+    link: 'https://harichitracrackers.com',
+    imageMedium: undefined,
+    imageSmall: undefined
+  },
+  {
+    title: 'Inventory Management for Stores',
+    description: 'A robust inventory management system for retail stores, featuring real-time updates and analytics.',
+    image: 'images/inventory.webp',
+    technologies: ['React', 'TypeScript', 'SQL'],
+    imageMedium: undefined,
+    imageSmall: undefined
+  },
 ];
