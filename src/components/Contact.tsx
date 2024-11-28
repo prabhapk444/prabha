@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Send, Github, Instagram } from 'lucide-react';
@@ -16,18 +16,20 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    Swal.fire({
-      title: 'Success!',
-      text: 'Your message has been sent.',
-      icon: 'success',
-      confirmButtonText: 'OK',
-    });
-    setFormData({ name: '', email: '', message: '' });
-
-  };
+  const handleSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      console.log('Form submitted:', formData);
+      Swal.fire({
+        title: 'Success!',
+        text: 'Your message has been sent.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+      });
+      setFormData({ name: '', email: '', message: '' });
+    },
+    [formData]
+  );
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -39,14 +41,14 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-            Get in Touch
+            Let's Collaborate and Connect
           </h2>
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="flex items-center space-x-4">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                  <Mail className="w-6 h-6 text-primary-500" />
+                  <Mail className="w-6 h-6 text-primary-500" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -55,6 +57,7 @@ export default function Contact() {
                   <a
                     href="mailto:viperprabhakaran@gmail.com"
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-500"
+                    aria-label="Send email to viperprabhakaran@gmail.com"
                   >
                     viperprabhakaran@gmail.com
                   </a>
@@ -63,15 +66,16 @@ export default function Contact() {
 
               <div className="flex items-center space-x-4">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                  <Phone className="w-6 h-6 text-primary-500" />
+                  <Phone className="w-6 h-6 text-primary-500" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     Phone
                   </h3>
                   <a
-                    href="tel:+91 6383786437"
+                    href="tel:+916383786437"
                     className="text-gray-600 dark:text-gray-300 hover:text-primary-500"
+                    aria-label="Call phone number +91 6383786437"
                   >
                     +91 6383786437
                   </a>
@@ -80,7 +84,7 @@ export default function Contact() {
 
               <div className="flex items-center space-x-4">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                  <MapPin className="w-6 h-6 text-primary-500" />
+                  <MapPin className="w-6 h-6 text-primary-500" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -92,13 +96,13 @@ export default function Contact() {
                 </div>
               </div>
 
-            
               <div className="flex space-x-6">
                 <a
                   href="https://github.com/prabhapk444"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-primary-100 dark:bg-primary-900 rounded-lg hover:text-primary-500"
+                  aria-label="Visit GitHub profile"
                 >
                   <Github className="w-6 h-6 text-primary-500" />
                 </a>
@@ -107,13 +111,14 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-primary-100 dark:bg-primary-900 rounded-lg hover:text-primary-500"
+                  aria-label="Visit Instagram profile"
                 >
                   <Instagram className="w-6 h-6 text-primary-500" />
                 </a>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" autoComplete='off'>
               <div>
                 <label
                   htmlFor="name"
@@ -128,6 +133,8 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   required
+                  aria-required="true"
+                  aria-label="Your Name"
                 />
               </div>
 
@@ -145,6 +152,8 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   required
+                  aria-required="true"
+                  aria-label="Your Email Address"
                 />
               </div>
 
@@ -162,12 +171,15 @@ export default function Contact() {
                   rows={4}
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   required
+                  aria-required="true"
+                  aria-label="Your Message"
                 />
               </div>
 
               <button
                 type="submit"
                 className="w-full px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors flex items-center justify-center space-x-2"
+                aria-label="Send Message"
               >
                 <Send className="w-5 h-5" />
                 <span>Send Message</span>
