@@ -1,10 +1,11 @@
 import { Project } from "../types";
+const BASE_IMAGE_PATH = '/images';
 
 export const projects: Project[] = [
   {
     title: "Shelby's Music",
     description: "A modern music streaming platform with advanced playlist management.",
-    image: 'images/spotify.webp',
+    image: `${BASE_IMAGE_PATH}/spotify.webp`, 
     technologies: ['Next.js', 'TypeScript', 'Supabase'],
     imageMedium: undefined,
     imageSmall: undefined
@@ -12,7 +13,7 @@ export const projects: Project[] = [
   {
     title: 'Nursery Plant Management',
     description: 'Complete solution for managing nursery inventory and sales.',
-    image: 'images/nursery.webp',
+    image: `${BASE_IMAGE_PATH}/nursery.webp`, 
     technologies: ['PHP', 'MySQL', 'Bootstrap'],
     imageMedium: undefined,
     imageSmall: undefined
@@ -20,7 +21,7 @@ export const projects: Project[] = [
   {
     title: 'Ayurveda Products Platform',
     description: 'E-commerce platform for Ayurvedic products.',
-    image: 'images/ayur.webp',
+    image: `${BASE_IMAGE_PATH}/ayur.webp`, 
     technologies: ['PHP', 'MySQL', 'Bootstrap'],
     imageMedium: undefined,
     imageSmall: undefined
@@ -28,7 +29,7 @@ export const projects: Project[] = [
   {
     title: 'Hari Chitra Crackers',
     description: 'Online fireworks store with inventory management.',
-    image: 'images/crackers.webp',
+    image: `${BASE_IMAGE_PATH}/crackers.webp`, 
     technologies: ['PHP', 'MySQL', 'jQuery'],
     link: 'https://harichitracrackers.com',
     imageMedium: undefined,
@@ -37,7 +38,7 @@ export const projects: Project[] = [
   {
     title: 'Inventory Management for Stores',
     description: 'A robust inventory management system for retail stores, featuring real-time updates and analytics.',
-    image: 'images/inventory.webp',
+    image: `${BASE_IMAGE_PATH}/inventory.webp`, 
     technologies: ['React', 'TypeScript', 'SQL'],
     imageMedium: undefined,
     imageSmall: undefined
