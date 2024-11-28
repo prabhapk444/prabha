@@ -24,7 +24,7 @@ export default function Experience() {
           </h2>
 
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
-         
+            {/* Timeline Line */}
             <div className="absolute hidden md:block left-1/2 -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
 
             {experience.map((exp, index) => (
@@ -37,14 +37,8 @@ export default function Experience() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-              
-                <div
-                  className={`absolute w-4 h-4 bg-primary-500 rounded-full -top-2 md:top-8 ${
-                    index % 2 === 0
-                      ? "md:-right-2 left-1/2 md:translate-x-1/2"
-                      : "md:-left-2 right-1/2 md:translate-x-1/2"
-                  } border-2 border-white dark:border-gray-900`}
-                ></div>
+                
+                
 
              
                 <div className="flex items-start space-x-4">

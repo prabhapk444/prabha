@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import imageSrc from '/images/2024-11-13-15-40-35-024.jpeg';
+import imageSrc from '/public/2024-11-13-15-40-35-024.jpeg';
 
 
 export default function About() {
