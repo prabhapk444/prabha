@@ -37,7 +37,7 @@ export default function About() {
             
             <div>
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              S. Prabhakaran, B.Sc., M.C.A.
+              S Prabhakaran, B.Sc., M.C.A.
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 General Manager at Thrive Boost, passionate about creating innovative solutions
